@@ -31,8 +31,8 @@ def move(state,index):
         print('Unvalid move')
         return state
     elif state[index]==0:
-        print('The cup is empty')
-        return state
+        print('The cup is empty1')
+        return []
     elif index>13:
         index=index-13
     pebble_count=state[index]
