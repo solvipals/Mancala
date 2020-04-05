@@ -11,6 +11,7 @@ def finish_game(state):
     if (sum(state[0:6]) == 0):
         for i in range (7, 13):
             count = count+state[i]
+            state[i]=0
         
         state[13] = state[13]+count
         return True
@@ -18,10 +19,8 @@ def finish_game(state):
     elif (sum(state[7:12]) == 0):
         for i in range (6):
             count = count+state[i]
+            state[i] = 0
         state[6] = state[6]+count
         return True
     else:
         return False
-    
-    
-    
