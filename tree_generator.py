@@ -5,6 +5,7 @@ Created on Sat Apr  4 18:27:57 2020
 @author: andri
 """
 from Board import move
+from Game_Operations import finish_game
 
 def state_list_generator(state):
     state_list=[]
@@ -15,11 +16,15 @@ def state_list_generator(state):
         for i in range(0,6):
             state=list(current_state)
             state=move(state,i)
+            if state != []:
+                finish_game(state)
             state_list.append(state)
     elif current_state[14]==-1:
         for i in range(7,13):
             state=list(current_state)
             state=move(state,i)
+            if state != []:
+                finish_game(state)
             state_list.append(state)
     state=list(current_state)
     return list(state_list)
