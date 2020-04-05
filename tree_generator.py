@@ -43,7 +43,6 @@ def tree_state_generator(state,depth):
 def score_tree_generator(states_tree,depth):
     score_tree=[[] for i in range(depth)]
     d=(depth-1)
-    print(d)
     #Computing socres for last level of score_tree
     for i in range(len(states_tree[d])):
         if states_tree[d][i]==[]:
@@ -52,7 +51,6 @@ def score_tree_generator(states_tree,depth):
             score_tree[d].append(states_tree[d][i][6]-states_tree[d][i][13])
     ## filling up rest of the tree with min(scores) when player -1 chooses and max when its player1's turn
     for j in range((d-1),-1,-1):
-        print(j)
         for i in range(len(states_tree[j])):
             if states_tree[j][i]==[]:
                 score_tree[j].append(np.nan)
