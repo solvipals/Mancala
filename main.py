@@ -21,5 +21,5 @@ while (not finish_game(state)):
     print("Choose your master")
     choice = int(input())
     
-    state = move(state, choice)
+    move(state, choice)
     
