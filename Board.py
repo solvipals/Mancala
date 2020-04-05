@@ -23,7 +23,6 @@ def move(state, index):
         pebble_count = state[index]
         state[index] = 0
     else:
-        print('your move is invalid, please choose again.')
         return []
     if state[14] == 1:
         while pebble_count > 0:
@@ -39,6 +38,7 @@ def move(state, index):
                     state[6] += 1 + state[(12 - index)]
                     state[index] = 0
                     state[abs(index - 12)] = 0
+                    
     elif state[14] == -1:
         while pebble_count > 0:
             index += 1

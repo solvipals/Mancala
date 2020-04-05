@@ -21,5 +21,10 @@ while (not finish_game(state)):
     print("Choose your master")
     choice = int(input())
     
-    move(state, choice)
+    if move(state, choice) == []:
+        print("This move is not valid. Please choose another one")
+    else:
+        move(state, choice)
+    
+    
     
