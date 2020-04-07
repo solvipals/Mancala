@@ -6,16 +6,36 @@
 
 import os 
 from Board import *
-print("Do you want to play against another player(0) or the computer(1)?")
-game_type=-1
-while game_type>1 or game_type<0:
-    game_type=int(input())
-    if game_type==0:
-        os.system('2player.py')
-    elif game_type==1:
-        os.system('1player.py')
-    else:
-        print('Invalid input, please choose either 0 or 1')
+from Game_Operations import *
+from minimax import *
+state = initialize_game()
+
+
+while (True):
+    print_state(state)
+    result = finish_game(state)
+    
+    if (result != None):
+        print("Score is {}".format(result))
+    
+    c = True
+    if state[14]==1:
+        print("Player 1's turn")
+        while(c):
+            print("Choose your master")
+            choice = int(input())
+            o  = getoptions(state)
+            if (choice in o):
+                move(state, choice)
+                c = False
+            else:
+                print("Invalid Move you piece of shit, choose something valid")
+        
+    elif state[14]==-1:
+        state1 = copy.deepcopy(state)
+        (m, choice) = maxi(state)
+        state = state1
+        move(state, choice)
     
 
 
