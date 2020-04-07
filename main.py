@@ -4,27 +4,23 @@
 
 #Eftir ad skrifa main 
 
+import os 
 from Board import *
-from Game_Operations import *
-
-state = initialize_game()
-
-
-while (not finish_game(state)):
-    print_state(state)
-    
-    if state[14]==1:
-        print("Player 1's turn")
-    elif state[14]==-1:
-        print("Player2's turn")
-        
-    print("Choose your master")
-    choice = int(input())
-    
-    if move(state, choice) == []:
-        print("This move is not valid. Please choose another one")
+print("Do you want to play against another player(0) or the computer(1)?")
+game_type=-1
+while game_type>1 or game_type<0:
+    game_type=int(input())
+    if game_type==0:
+        os.system('2player.py')
+    elif game_type==1:
+        os.system('1player.py')
     else:
-        move(state, choice)
+        print('Invalid input, please choose either 0 or 1')
     
-    
-    
+
+
+print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
+print('%                                 %')
+print('%%%%%%%%%%%  GAME OVER %%%%%%%%%%%%')
+print('%                                 %')
+print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%') 
