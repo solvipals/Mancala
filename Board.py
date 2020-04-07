@@ -8,7 +8,7 @@ Created on Sat Apr  4 14:29:15 2020
 import numpy as np, pandas as pd
 
 def initialize_game():
-    state = [1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 0, 1]
+    state = [0, 2, 0, 2, 0, 2, 0, 0, 2, 0, 2, 0, 2, 0, 1]
     return state
 
 

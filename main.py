@@ -10,13 +10,16 @@ from Game_Operations import *
 from minimax import *
 state = initialize_game()
 
-
-while (True):
+F = True
+while (F):
     print_state(state)
     result = finish_game(state)
     
     if (result != None):
+        F = False
         print("Score is {}".format(result))
+        break
+        
     
     c = True
     if state[14]==1:
@@ -38,7 +41,7 @@ while (True):
         move(state, choice)
     
 
-
+print_state(state)
 print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
 print('%                                 %')
 print('%%%%%%%%%%%  GAME OVER %%%%%%%%%%%%')
