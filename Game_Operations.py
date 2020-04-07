@@ -14,12 +14,6 @@ def finish_game(state):
             state[i] = 0
 
         state[13] = state[13] + count
-        print_state(state)
-        print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-        print('%                                 %')
-        print('%%%%%%%%%%%  GAME OVER %%%%%%%%%%%%')
-        print('%                                 %')
-        print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
         return True
     if sum(state[7:13]) == 0:
         for i in range(6):
@@ -27,12 +21,5 @@ def finish_game(state):
             state[i] = 0
 
         state[6] = state[6] + count
-
-        print_state(state)
-        print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
-        print('%                                 %')
-        print('%%%%%%%%%%%  GAME OVER %%%%%%%%%%%%')
-        print('%                                 %')
-        print('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%')
         return True
     return False
