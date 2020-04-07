@@ -8,8 +8,8 @@ Created on Sat Apr  4 14:29:15 2020
 import numpy as np, pandas as pd
 
 def initialize_game():
-    state = [
-     4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0, 1]
+    state = [4, 4, 4, 4, 4, 4, 0, 4, 4, 4, 4, 4, 4, 0, 1]
+    #state = [2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 2, 0, 1]
     return state
 
 
@@ -23,7 +23,7 @@ def move(state, index):
         pebble_count = state[index]
         state[index] = 0
     else:
-        return []
+        return state
     if state[14] == 1:
         while pebble_count > 0:
             index += 1
