@@ -16,6 +16,7 @@ def initialize_game():
 def print_state(state):
     print('|--' + str(state[12]) + '--' + str(state[11]) + '--' + str(state[10]) + '--' + str(state[9]) + '--' + str(state[8]) + '--' + str(state[7]) + '--|\n' + '|' + str(state[13]) + '------------------' + str(state[6]) + '|\n|--' + str(state[0]) + '--' + str(state[1]) + '--' + str(state[2]) + '--' + str(state[3]) + '--' + str(state[4]) + '--' + str(state[5]) + '--|')
     print('The score of the board is:' + str(state[6] - state[13]))
+    print("  ")
 
 
 def move(state, index):
@@ -82,5 +83,21 @@ def getoptions(state):
     
         
 
+def finish_game(state):
+    count = 0
+    if sum(state[0:6]) == 0:
+        for i in range(7, 13):
+            count = count + state[i]
+            state[i] = 0
 
+        state[13] = state[13] + count
+        return True
+    if sum(state[7:13]) == 0:
+        for i in range(6):
+            count = count + state[i]
+            state[i] = 0
+
+        state[6] = state[6] + count
+        return True
+    return False
 
