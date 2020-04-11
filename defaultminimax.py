@@ -7,7 +7,6 @@ Created on Tue Apr  7 18:41:44 2020
 
 
 from Board import *
-from Game_Operations import *
 
 
 def mini(state,depth):
