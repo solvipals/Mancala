@@ -7,71 +7,59 @@ Created on Tue Apr  7 18:41:44 2020
 
 
 from Board import *
-from Game_Operations import *
-import copy
 
 
-def mini(state,depth, alpha, beta):
+def mini(state,depth):
     depth-=1
     current_state=copy.deepcopy(state)
     miniv=49
     xi=None
-    m=None 
+    
     for option in getoptions(state):
         state=copy.deepcopy(current_state)
         state=move(state,option)
+        print(state)
         if(finish_game(state)):
             m=state[6]-state[13]
         elif depth==0:
             m=state[6]-state[13]
+            print(m)
         elif state[14]==-1:
-            (m,_)=mini(state,depth, alpha, beta)
+            m,_=mini(state,depth)
         elif state[14]==1:
-            (m,_)=maxi(state,depth, alpha, beta)
-            
+            m,_=maxi(state,depth)
         if m < miniv:
             miniv = m
             xi = option
-        
-        #state = current_state
-        if miniv <= alpha:
-            return miniv, xi
-        
-        if miniv < beta:
-            beta = miniv
+
+
             
     return miniv,xi
 
 
-def maxi(state,depth, alpha, beta):
+def maxi(state,depth):
     depth-=1
     current_state=copy.deepcopy(state)
     maxiv=-49
     xi=None
-    m=None    
+        
     for option in getoptions(state):
         state=copy.deepcopy(current_state)
         state=move(state,option)
+        print(state)
         if(finish_game(state)):
-            m = state[6]-state[13]
+            m=state[6]-state[13]
         elif depth==0:
             m=state[6]-state[13]
+            print(m)
         elif state[14]==-1:
-            (m,_)=mini(state,depth, alpha, beta)
+            m,_mini(state,depth)
         elif state[14]==1:
-            (m,_)=maxi(state,depth, alpha, beta)
-            
+            m,_=maxi(state,depth)
         if m > maxiv:
             maxiv = m
             xi = option
-        
-        #state = current_state
-        
-        if maxiv >= beta:
-            return maxiv, xi
-        
-        if maxiv > alpha:
-            alpha = maxiv
+
 
             
     return maxiv,xi
