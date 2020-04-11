@@ -6,6 +6,12 @@
 
 import os 
 from Board import *
+from oneplayer_minimax import *
+from zeroplayer import *
+from twoplayer import *
+from termcolor import colored, cprint
+import copy
+import pkg_resources.py2_warn
 
 q = False
 
@@ -57,11 +63,11 @@ while not q:
     
     
     if choice == 1:
-        os.system('1player_minimax.py')
+        oneplayer()
     elif choice == 2:
-        os.system('2player.py')
+        twoplayer()
     elif choice == 3:
-        os.system('0player.py')
+        zeroplayer()
     
     print("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤")
     print("¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤¤")
