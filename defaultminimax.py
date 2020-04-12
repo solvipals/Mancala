@@ -7,9 +7,10 @@ Created on Tue Apr  7 18:41:44 2020
 
 
 from Board import *
+import copy
 
 
-def mini(state,depth):
+def minidef(state,depth):
     depth-=1
     current_state=copy.deepcopy(state)
     miniv=49
@@ -18,16 +19,15 @@ def mini(state,depth):
     for option in getoptions(state):
         state=copy.deepcopy(current_state)
         state=move(state,option)
-        print(state)
+
         if(finish_game(state)):
             m=state[6]-state[13]
         elif depth==0:
             m=state[6]-state[13]
-            print(m)
         elif state[14]==-1:
-            m,_=mini(state,depth)
+            m,_=minidef(state,depth)
         elif state[14]==1:
-            m,_=maxi(state,depth)
+            m,_=maxidef(state,depth)
         if m < miniv:
             miniv = m
             xi = option
@@ -37,7 +37,7 @@ def mini(state,depth):
     return miniv,xi
 
 
-def maxi(state,depth):
+def maxidef(state,depth):
     depth-=1
     current_state=copy.deepcopy(state)
     maxiv=-49
@@ -46,16 +46,15 @@ def maxi(state,depth):
     for option in getoptions(state):
         state=copy.deepcopy(current_state)
         state=move(state,option)
-        print(state)
+
         if(finish_game(state)):
             m=state[6]-state[13]
         elif depth==0:
             m=state[6]-state[13]
-            print(m)
         elif state[14]==-1:
-            m,_mini(state,depth)
+            m,_ = minidef(state,depth)
         elif state[14]==1:
-            m,_=maxi(state,depth)
+            m,_ = maxidef(state,depth)
         if m > maxiv:
             maxiv = m
             xi = option
