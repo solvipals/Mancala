@@ -12,12 +12,12 @@ from Board import *
 from abminimax import *
 
 # dataframe Name and Age columns
-df = pd.DataFrame({'Depth': [1,2,3,4,5,6,7,8,9,10]})
+df = pd.DataFrame({'Depth': [1,2,3]})
 
 
-for i in range (1,11):
+for i in range (1,4):
     data = []
-    for j in range(1,11):
+    for j in range(1,4):
         state  = initialize_game()
         while (not finish_game(state)):
             if state[14]==1:

@@ -6,7 +6,7 @@ Created on Tue Apr  7 19:44:14 2020
 """
 import os
 from Board import *
-from abminimax import *
+from Algorithms.abminimax import *
 import copy
 import time
 from termcolor import colored, cprint

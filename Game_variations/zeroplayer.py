@@ -1,7 +1,7 @@
 
 import os
 from Board import *
-from abminimax import *
+from Algorithms.abminimax import *
 import copy
 import time
 from termcolor import colored, cprint

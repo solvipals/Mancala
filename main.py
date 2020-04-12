@@ -6,9 +6,9 @@
 
 import os 
 from Board import *
-from oneplayer_minimax import *
-from zeroplayer import *
-from twoplayer import *
+from Game_variations.oneplayer_minimax import *
+from Game_variations.zeroplayer import *
+from Game_variations.twoplayer import *
 from termcolor import colored, cprint
 import copy
 import pkg_resources.py2_warn
