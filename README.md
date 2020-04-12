@@ -21,7 +21,6 @@ Project is created with:
 * Packages:
 	* Numpy
 	* Pandas
-	* Termcolor
 	
 ## Setup
 
