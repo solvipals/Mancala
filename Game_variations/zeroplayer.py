@@ -4,7 +4,6 @@ from Board import *
 from Algorithms.abminimax import *
 import copy
 import time
-from termcolor import colored, cprint
 
 def zeroplayer():
     state = initialize_game()
@@ -89,7 +88,7 @@ def zeroplayer():
     
         elif state[14]==-1:
             
-            cprint("Player 2 is thinking...", "white", "on_blue")
+            print("Player 2 is thinking...")
             print(" ")
             start = time.time()
             best_score,best_move = mini(state,depth2, -49, 49)

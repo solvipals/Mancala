@@ -9,7 +9,6 @@ from Board import *
 from Algorithms.abminimax import *
 import copy
 import time
-from termcolor import colored, cprint
 
 def oneplayer():
     state = initialize_game()
@@ -100,17 +99,17 @@ def oneplayer():
                         if choice in getoptions(state):
                             validInput = True
                             print(" ")
-                            cprint("Choice was valid. Pebbles from pocket {} were moved".format(choice), "white", "on_green")
+                            print("Choice was valid. Pebbles from pocket {} were moved".format(choice))
                             print(" ")
                         else:
                             raise Exception
                     except Exception as e:
-                        cprint("The pocket you chose is invalid. It is not yours or it is empty.", "white", "on_red")
-                        cprint("Check the board and try again",  "white", "on_red")
+                        print("The pocket you chose is invalid. It is not yours or it is empty.")
+                        print("Check the board and try again")
                         print("  ")
                         
                 except ValueError:
-                    cprint("Only integers are allowed, please try again", "white", "on_red")
+                    print("Only integers are allowed, please try again")
                 
             move(state, choice)
     
