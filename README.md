@@ -18,7 +18,10 @@ It can be played in:
 ## Technologies
 Project is created with:
 * Python version: 3.7
-* 
+* Packages:
+** Numpy
+** Pandas
+** Termcolor
 	
 ## Setup
 
@@ -26,17 +29,10 @@ To run this project, the user has 2 options.
 
 * If the user is using Windows he can download the Mancala.exe file and run it on his computer. It might take up to 1 minute for the game to start working the first time.
 
-* Another option is to install the project locally. The user has to make sure that he has Python installed, at least version 2.7.
-He will then have to make sure that 
+* Another option is to install the project locally. The user has to make sure that he has Python installed, at least version 2.7. If the user does not have python installed he can follow the guidelines at https://www.python.org/downloads/
+He will then have to make sure that he has all of the packages available.
 
-
-install it locally on your computer. Make sure you have at least Python Version 2.7.
-Navigate to the folder where main.py is located.
-
-
-numpy
-pandas
-termcolor
+When the user is sure that his machine fulfills all of the requirements he should navigate to the downloaded folder /mancala from the command prompt/Terminal and run main.py.
 
 ```
 $ cd ../mancala
